@@ -7,12 +7,14 @@ namespace Unit_Testing
     {
         private Program program;
         private PrimeNum prime;
+        private LeapYear leap;
 
         [SetUp]
         public void Setup()
         {
             program = new Program();
             prime = new PrimeNum();
+            leap = new LeapYear();
             
         }
 
@@ -37,6 +39,16 @@ namespace Unit_Testing
             var result = PrimeNum.IsPrime(n);
 
             Assert.AreEqual(false, result);
+        }
+
+        [Test]
+        public void CheckLeapYear()
+        {
+            int n = 2000;
+
+            var res = LeapYear.IsLeapYear(n);
+
+            Assert.AreEqual(true, res);
         }
     }
 }
